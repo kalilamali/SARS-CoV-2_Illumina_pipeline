@@ -3,6 +3,10 @@ QC raw reads
 ```
 java -jar /Users/kalilamali/Trimmomatic-0.39/trimmomatic-0.39.jar PE -phred33 M4_R1.fastq M4_R2.fastq M4_R1_paired.fastq M4_R1_unpaired.fastq M4_R2_paired.fastq M4_R2_unpaired.fastq ILLUMINACLIP:/Users/kalilamali/Trimmomatic-0.39/adapters/TruSeq3-PE.fa:2:30:10:2:keepBothReads LEADING:20 TRAILING:20 SLIDINGWINDOW:4:20 MINLEN:40
 ```
+De-novo assembly
+```
+megahit -1 M4_R1_paired.fastq -2 M4_R2_paired.fastq -o M4_denovo.fa
+```
 Map reads to reference genome
 ```
 bwa index NC_045512.fasta
